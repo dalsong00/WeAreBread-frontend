@@ -25,10 +25,14 @@
 
 ### 기술 스택
 
-- `FE` : html, 
-0.javascript, react, redux, styled-components
+- `FE` : html.javascript, react, redux, styled-components
 - `BE` : node.js, express, mysql, aws, oracle
 - `공통` : git, trello, figma, notion, slack
+
+### 담당한 부분
+
+https://user-images.githubusercontent.com/114578990/218025322-14cfc9e9-a80c-4af2-b683-ecb0641583ae.mov
+
 
 ### 필수 구현 사항
 
