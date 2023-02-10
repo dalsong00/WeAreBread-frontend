@@ -31,8 +31,22 @@
 
 ### 담당한 부분
 
+#### 메인
 https://user-images.githubusercontent.com/114578990/218025322-14cfc9e9-a80c-4af2-b683-ecb0641583ae.mov
++ react-slick 라이브러리를 활용하여 캐러셀 만들기
++ map() 함수로 반복되는 카드 레이아웃 구성하기
++ forEach 고차함수로 setData(prev => [...prev, { ...el, content: res.shopDataByBread }]) 작성하여 원하는 형태의 데이터로 가공하기
++ visibility: visible;, visibility: hidden; CSS 속성을 이용해 hover 시 화면을 나타내거나 사라지게 만들기
 
+### 랜덤게임
+
+https://user-images.githubusercontent.com/114578990/218028932-d7bff681-ce3a-4bde-99e1-e205c0ed2276.mov
++ setTimeout, clearTimeout 함수, Math.Random 매서드를 이용해서 랜덤으로 이미지 띄워주다가 클릭하면 정지하게 만들기
+
+## 좋아요 버튼
+
+https://user-images.githubusercontent.com/114578990/218029854-68f31db2-80de-4065-b959-75338503ee25.mov
++ 좋아요 클릭 시 +1, 좋아요 해제 시 -1 되게 만들기
 
 ### 필수 구현 사항
 
