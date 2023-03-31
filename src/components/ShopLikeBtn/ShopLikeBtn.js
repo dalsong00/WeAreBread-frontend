@@ -6,7 +6,7 @@ const ShopLikeBtn = ({ shopId, likeCount }) => {
   const [isClicked, setIsClicked] = useState(false);
   const handleLikeBtn = () => {
     if (!isClicked) {
-      fetch(`http://138.2.112.49:3000/shops/like/${parseInt(shopId)}`, {
+      fetch(`http://138.2.112.49:3003/shops/like/${parseInt(shopId)}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
@@ -21,7 +21,7 @@ const ShopLikeBtn = ({ shopId, likeCount }) => {
         });
       setIsClicked(prev => !prev);
     } else {
-      fetch(`http://138.2.112.49:3000/shops/like/${parseInt(shopId)}`, {
+      fetch(`http://138.2.112.49:3003/shops/like/${parseInt(shopId)}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',

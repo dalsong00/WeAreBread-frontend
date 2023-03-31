@@ -18,7 +18,7 @@ const ProductList = () => {
 
   useEffect(() => {
     fetch(
-      `https://138.2.112.49:3000/shops?search=${search}&_offset=${offset}&_limit=${limit}&sort=${
+      `https://138.2.112.49:3003/shops?search=${search}&_offset=${offset}&_limit=${limit}&sort=${
         sort || 'likes'
       }`,
       {
@@ -37,7 +37,7 @@ const ProductList = () => {
 
   const fetchPins = async scroll => {
     const res = await fetch(
-      `https://138.2.112.49:3000/shops?search=${search}&_offset=${offset}&_limit=${limit}&sort=${
+      `https://138.2.112.49:3003/shops?search=${search}&_offset=${offset}&_limit=${limit}&sort=${
         sort || 'likes'
       }?scroll=${scroll}`
     );

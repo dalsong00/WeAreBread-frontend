@@ -7,7 +7,7 @@ const ReviewLikeBtn = ({ reviewId, recommendCount }) => {
   const handleLikeBtn = () => {
     if (!isClicked) {
       fetch(
-        `http://138.2.112.49:3000/reviews/recommend/${parseInt(reviewId)}`,
+        `http://138.2.112.49:3003/reviews/recommend/${parseInt(reviewId)}`,
         {
           method: 'POST',
           headers: {
@@ -25,7 +25,7 @@ const ReviewLikeBtn = ({ reviewId, recommendCount }) => {
       setIsClicked(prev => !prev);
     } else {
       fetch(
-        `http://138.2.112.49:3000/reviews/recommend/${parseInt(reviewId)}`,
+        `http://138.2.112.49:3003/reviews/recommend/${parseInt(reviewId)}`,
         {
           method: 'DELETE',
           headers: {

@@ -78,19 +78,6 @@ const SearchBar = () => {
     localStorage.setItem('recentSearch', JSON.stringify(recentSearch));
   }, [recentSearch]);
 
-  //**Todo
-  // 통신 로직 줄이기
-  // 초성 검색이나 자음검색시 검색제안은 배제
-  // 가게 or 주소 문자열에 자음 or 모음이 없다는 전제
-  // 초성 중성 종성 예상 검색제안도 배제
-  // 1. searchText의 끝문자검사해서 자음이나 모음이 아닐때 통신하기
-  // 2. 공백을 구분하여 배열로 관리
-  // ex) serchText = '서울 식빵'
-  // => ['서울', '식빵'][0]으로 첫통신
-  // => ['서울', '식빵'][1]로 첫통신 때 받은 데이터를 필터링
-  // '가'.charCodeAt() => 44032
-  // '힟'.charCodeAt() => 55199
-
   const [searchTexts, setSearchTexts] = useState([]);
   const [suggestionLists, setSuggestionLists] = useState([]);
 
@@ -99,22 +86,10 @@ const SearchBar = () => {
       setIsFocus(true);
     }
 
-    // if (searchText && isSyllable(searchText) && !searchText.includes(' ')) {
-    //   fetch(
-    //     `http://138.2.112.49:3000/shops?search=${searchText}&offset=0&limit=100&sort=likes`
-    //   )
-    //     .then(res => res.json())
-    //     .then(data => {
-    //       // console.log('통신 :', data.list);
-    //       setSuggestionLists(data.list);
-    //     });
-    // }
-
     if (isSyllable()) {
       setSearchTexts(searchText.split(' ').filter(s => s !== ''));
     }
   }, [searchText]);
-  // console.log('searchTexts :', searchTexts);
 
   const isSyllable = (text = searchText) => {
     const unicode = `${text[text.length - 1]}`.charCodeAt();
@@ -123,9 +98,8 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    console.log('통신');
     fetch(
-      `http://138.2.112.49:3000/shops?search=${searchTexts[0]}&offset=0&limit=100&sort=likes`
+      `http://138.2.112.49:3003/shops?search=${searchTexts[0]}&offset=0&limit=100&sort=likes`
     )
       .then(res => res.json())
       .then(data => {
@@ -141,7 +115,6 @@ const SearchBar = () => {
       });
   }, [searchTexts]);
 
-  console.log('2. suggestionLists :', suggestionLists);
   return (
     <>
       <Search isFocus={isFocus} ref={modalRef}>
@@ -214,28 +187,28 @@ const SearchModal = styled.div`
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  } /* 스크롤 바 */
+  }
 
   ::-webkit-scrollbar-track {
     margin-bottom: 20px;
-  } /* 스크롤 바 밑의 배경 */
+  }
 
   ::-webkit-scrollbar-thumb {
     background: #ddd;
     border-radius: 10px;
-  } /* 실질적 스크롤 바 */
+  }
 
   ::-webkit-scrollbar-thumb:hover {
     background: #404040;
-  } /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+  }
 
   ::-webkit-scrollbar-thumb:active {
     background: #808080;
-  } /* 실질적 스크롤 바를 클릭할 때 */
+  }
 
   ::-webkit-scrollbar-button {
     display: none;
-  } /* 스크롤 바 상 하단 버튼 */
+  }
 `;
 
 const SearchBg = styled.div`

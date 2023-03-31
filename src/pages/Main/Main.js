@@ -9,14 +9,14 @@ const Main = () => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch('http://138.2.112.49:3000/bread')
+    fetch('http://138.2.112.49:3003/bread')
       .then(res => res.json())
       .then(res => setCategory(res.breadLists));
   }, []);
 
   useEffect(() => {
     Array.from(category).forEach(el => {
-      fetch(`http://138.2.112.49:3000/shops/bread_id/${el.id}`)
+      fetch(`http://138.2.112.49:3003/shops/bread_id/${el.id}`)
         .then(res => res.json())
         .then(res =>
           setData(prev => [...prev, { ...el, content: res.shopDataByBread }])
@@ -31,7 +31,7 @@ const Main = () => {
         <MoveToRandom to="/random">클릭😛</MoveToRandom>
       </TitleSection>
       <MoveToTopBtn />
-      <ImgBox src="/images/bread3.jpg" />
+      <ImgBox src="/images/randomImg/bread3.jpg" />
       {data.map(card => {
         return <CardWrapper key={card.id} card={card} />;
       })}

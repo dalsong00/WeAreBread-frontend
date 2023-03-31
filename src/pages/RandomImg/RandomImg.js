@@ -20,8 +20,8 @@ const RandomImg = () => {
     <>
       <RandomTitle>이거 어때?</RandomTitle>
       <Background className="background">
-        <Wrapper
-          src={`/images/bread${currentImageNum}.jpg`}
+        <BreadImg
+          src={`/images/randomImg/bread${currentImageNum}.jpg`}
           alt="빵 랜덤 이미지"
           onClick={stopRandomGame}
         />
@@ -38,7 +38,7 @@ const Background = styled.div`
   ${({ theme }) => theme.common.flexCenterColumn}
 `;
 
-const Wrapper = styled.img`
+const BreadImg = styled.img`
   width: 1600px;
   height: 720px;
   object-fit: cover;

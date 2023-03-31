@@ -22,7 +22,7 @@ const ProductDetail = () => {
   }, [dispatch, isLoaded]);
 
   useEffect(() => {
-    fetch(`http://138.2.112.49:3000/shops/shop_id/1`, {
+    fetch(`http://138.2.112.49:3003/shops/shop_id/1`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
