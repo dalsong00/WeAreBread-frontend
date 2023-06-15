@@ -60,7 +60,7 @@ https://user-images.githubusercontent.com/114578990/218029854-68f31db2-80de-4065
 8. Footer
 
 ### 회고록
-[회고록 링크] (https://dalsong-00.tistory.com/37?category=1343302)
+[회고록 링크](https://dalsong-00.tistory.com/37?category=1343302)
 ## Reference
 
 이 프로젝트는 다이닝코드 사이트를 참조하여 학습목적으로 만들었습니다.
